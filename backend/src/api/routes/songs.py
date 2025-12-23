@@ -15,9 +15,12 @@ async def create_song(
 
 @router.get("/", response_model=list[SongResponse])
 async def read_songs(
-    skip: int = 0, limit: int = 100, service: SongService = Depends(get_song_service)
+    skip: int = 0,
+    limit: int = 100,
+    search: str | None = None,
+    service: SongService = Depends(get_song_service),
 ):
-    return await service.get_songs(limit=limit, offset=skip)
+    return await service.get_songs(limit=limit, offset=skip, search=search)
 
 
 @router.get("/{track_id}", response_model=SongResponse)

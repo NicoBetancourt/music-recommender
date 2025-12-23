@@ -15,8 +15,17 @@ class SongRepository:
         await self.session.refresh(song)
         return song
 
-    async def get_all(self, limit: int = 100, offset: int = 0) -> Sequence[SongModel]:
-        stmt = select(SongModel).limit(limit).offset(offset)
+    async def get_all(
+        self, limit: int = 100, offset: int = 0, search: str | None = None
+    ) -> Sequence[SongModel]:
+        stmt = select(SongModel)
+        if search:
+            search_pattern = f"%{search}%"
+            stmt = stmt.where(
+                (SongModel.track_name.ilike(search_pattern))
+                | (SongModel.track_artist.ilike(search_pattern))
+            )
+        stmt = stmt.limit(limit).offset(offset)
         result = await self.session.execute(stmt)
         return result.scalars().all()
 

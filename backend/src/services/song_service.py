@@ -12,8 +12,10 @@ class SongService:
         created = await self.repo.create(song)
         return SongResponse.model_validate(created)
 
-    async def get_songs(self, limit: int = 100, offset: int = 0) -> list[SongResponse]:
-        songs = await self.repo.get_all(limit, offset)
+    async def get_songs(
+        self, limit: int = 100, offset: int = 0, search: str | None = None
+    ) -> list[SongResponse]:
+        songs = await self.repo.get_all(limit, offset, search)
         return [SongResponse.model_validate(s) for s in songs]
 
     async def get_song_by_id(self, track_id: str) -> SongResponse | None:
