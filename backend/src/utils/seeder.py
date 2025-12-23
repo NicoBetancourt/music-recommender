@@ -22,6 +22,8 @@ async def seed_database():
                 print(f"Loading songs from {csv_path}...")
                 try:
                     df = pd.read_csv(csv_path)
+                    # Deduplicate by track_id
+                    df = df.drop_duplicates(subset=["track_id"], keep="first")
                     # Handle NaNs: convert NaN to None for object columns
                     df = df.where(pd.notnull(df), None)
 
