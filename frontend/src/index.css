@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+/* Custom Scrollbar from reference */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #101322;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #313a68;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4a5589;
+}
+
+body {
+    background-color: #f5f6f8;
+    color: #0f172a;
+}
+
+.dark body {
+    background-color: #101322;
+    color: white;
+}
