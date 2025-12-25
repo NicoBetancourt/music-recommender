@@ -14,6 +14,12 @@ class Settings(BaseSettings):
     # Deezer API Configuration
     URL_DEEZER: str = "https://api.deezer.com"
 
+    # LLM Configuration
+    MODEL: str = "gemini-2.5-flash-lite-preview-09-2025"
+    GOOGLE_API_KEY: str = ""
+
+    LOGFIRE: bool = False
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_ignore_empty=True,

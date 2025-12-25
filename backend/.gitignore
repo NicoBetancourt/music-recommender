@@ -6,3 +6,9 @@ __pycache__
 # Virtual environment
 .venv
 
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# vscode
+.vscode

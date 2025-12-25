@@ -1,7 +1,9 @@
 from contextlib import asynccontextmanager
 
+import logfire
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
 from src.api.routes import music, recommendations, songs
 from src.core.config import settings
 from src.utils.seeder import seed_database
@@ -12,6 +14,17 @@ async def lifespan(app: FastAPI):
     await seed_database()
     yield
 
+
+def configure_logfire():
+    def scrubbing_callback(m: logfire.ScrubMatch):
+        return m.value
+
+    logfire.configure(scrubbing=logfire.ScrubbingOptions(callback=scrubbing_callback))
+    logfire.instrument_pydantic_ai()
+
+
+if settings.LOGFIRE:
+    configure_logfire()
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
