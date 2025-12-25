@@ -35,3 +35,52 @@ body {
     background-color: #101322;
     color: white;
 }
+
+/* Magic Search Animations */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(13, 51, 242, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(13, 51, 242, 0.8), 0 0 30px rgba(168, 85, 247, 0.6);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.animate-sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(13, 51, 242, 0.3) 50%,
+        transparent 100%
+    );
+    background-size: 1000px 100%;
+}

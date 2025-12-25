@@ -14,6 +14,7 @@ interface MusicState {
 
     // Search state
     currentSearchQuery: string;
+    isMagicMode: boolean;
 
     // Selection
     selectedSongIds: string[];
@@ -34,6 +35,8 @@ interface MusicState {
     nextSong: () => void;
     prevSong: () => void;
     getRecommendations: () => Promise<void>;
+    getMagicRecommendations: (text: string) => Promise<void>;
+    toggleMagicMode: () => void;
     setSearchQuery: (query: string) => void;
 }
 
@@ -44,6 +47,7 @@ export const useMusicStore = create<MusicState>((set, get) => ({
     page: 0,
     hasMore: true,
     currentSearchQuery: '',
+    isMagicMode: false,
 
     selectedSongIds: [],
     toggleSelection: (trackId) => {
@@ -150,5 +154,21 @@ export const useMusicStore = create<MusicState>((set, get) => ({
         } catch (err: any) {
             set({ isLoading: false, error: err.message });
         }
+    },
+
+    getMagicRecommendations: async (text: string) => {
+        if (!text.trim()) return;
+
+        set({ isLoading: true, error: null });
+        try {
+            const recommendations = await api.getTextRecommendations(text);
+            set({ songs: recommendations, isLoading: false, page: 0, hasMore: false });
+        } catch (err: any) {
+            set({ isLoading: false, error: err.message });
+        }
+    },
+
+    toggleMagicMode: () => {
+        set((state) => ({ isMagicMode: !state.isMagicMode }));
     }
 }));

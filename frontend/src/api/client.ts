@@ -32,4 +32,9 @@ export const api = {
         const response = await apiClient.post<Song[]>('/recommend/', { song_ids: songIds, limit });
         return response.data;
     },
+
+    getTextRecommendations: async (text: string, limit: number = 10): Promise<Song[]> => {
+        const response = await apiClient.post<Song[]>('/recommend/text', { text_input: text, limit });
+        return response.data;
+    },
 };
