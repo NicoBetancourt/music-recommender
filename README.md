@@ -4,19 +4,19 @@ An intelligent music recommendation system that combines **Machine Learning** wi
 
 ## Key Features
 
-- ** Dual Recommendations**:
+- **Dual Recommendations**:
   - **Traditional ML**: Based on musical feature similarity (K-Nearest Neighbors).
   - **Generative AI**: Natural language description → Musical features → Recommendations.
 
-- ** Premium Interface**: Modern design with dark mode, smooth animations, and micro-interactions.
+- **Premium Interface**: Modern design with dark mode, smooth animations, and micro-interactions.
 
-- ** Intelligent Search**: 
+- **Intelligent Search**: 
   - Traditional search by name/artist.
   - Magic search utilizing natural language processing.
 
-- ** Integrated Player**: Spotify audio previews directly within the application.
+- **Integrated Player**: Spotify audio previews directly within the application.
 
-- ** 30,000+ Songs**: Comprehensive Spotify dataset with detailed audio features available [here](https://www.kaggle.com/datasets/bricevergnou/spotify-recommendation).
+- **30,000+ Songs**: Comprehensive Spotify dataset with detailed audio features available [here](https://www.kaggle.com/datasets/bricevergnou/spotify-recommendation).
 
 ---
 
