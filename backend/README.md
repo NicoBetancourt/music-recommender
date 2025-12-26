@@ -2,7 +2,7 @@
 
 An intelligent music recommendation system that combines Machine Learning with natural language processing via LLM to offer personalized recommendations based on musical features and textual descriptions.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Core Features](#-core-features)
 - [Tech Stack](#-tech-stack)
@@ -16,7 +16,7 @@ An intelligent music recommendation system that combines Machine Learning with n
 
 ---
 
-## 🚀 Core Features
+## Core Features
 
 - **Song-based recommendations**: Get similar recommendations based on one or more reference songs.
 - **Natural language recommendations**: Describe the type of music you're looking for in natural language ("music for focus", "happy party songs", etc.).
@@ -27,7 +27,7 @@ An intelligent music recommendation system that combines Machine Learning with n
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Core
 - **Python**: 3.13+
@@ -64,7 +64,7 @@ An intelligent music recommendation system that combines Machine Learning with n
 
 ---
 
-## 🏗 Project Architecture
+## Project Architecture
 
 The project follows a simplified **Clean Architecture**, separating responsibilities into well-defined layers:
 
@@ -132,7 +132,7 @@ HTTP Client
 
 ---
 
-## 📦 Installation and Configuration
+## Installation and Configuration
 
 ### Prerequisites
 
@@ -170,13 +170,12 @@ API_V1_STR="/api/v1"
 # Database
 DATABASE_URL="sqlite+aiosqlite:///./music_recommender.db"
 
-# Spotify API (to fetch audio previews)
-SPOTIFY_CLIENT_ID="your_client_id"
-SPOTIFY_CLIENT_SECRET="your_client_secret"
+# Spotify API (Deprecated)
+SPOTIFY_BASIC_AUTHENTICATION="your_client_id"
 
 # Google Gemini API (for the LLM agent)
 GOOGLE_API_KEY="your_google_api_key"
-MODEL="gemini-2.0-flash-exp"
+MODEL="gemini-2.5-flash-lite-preview-09-2025"
 
 # Logfire (optional, for monitoring)
 LOGFIRE=false
@@ -190,7 +189,7 @@ uv run alembic upgrade head
 
 ---
 
-## ▶️ Running the Service
+## Running the Service
 
 ### Development Mode (with hot-reload)
 
@@ -222,7 +221,7 @@ Once the service is running, you can access:
 
 ---
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Base URL
 ```
@@ -382,7 +381,7 @@ Fetches audio preview and metadata for a song from Spotify.
 
 ---
 
-## 🎯 Recommendation System
+## Recommendation System
 
 The system implements **two complementary methods** for music recommendation:
 
@@ -474,7 +473,7 @@ Recommended Songs
 
 ---
 
-## 🤖 LLM Agent for Feature Extraction
+## LLM Agent for Feature Extraction
 
 ### Agent Architecture
 
@@ -549,7 +548,7 @@ The agent is trained to:
 
 ---
 
-## 🧠 Machine Learning Model
+## Machine Learning Model
 
 ### Algorithm: K-Nearest Neighbors (KNN)
 
@@ -660,7 +659,7 @@ distances, indices = nn_model.kneighbors([combined_features])
 
 ---
 
-## 🗄️ Database
+## Database
 
 ### Data Model
 
@@ -688,7 +687,7 @@ async def lifespan(app: FastAPI):
 
 ---
 
-## 🔧 Advanced Configuration
+## Advanced Configuration
 
 ### Complete Environment Variables
 
@@ -700,13 +699,12 @@ API_V1_STR="/api/v1"
 # Database
 DATABASE_URL="sqlite+aiosqlite:///./music_recommender.db"
 
-# Spotify
-SPOTIFY_CLIENT_ID="your_client_id"
-SPOTIFY_CLIENT_SECRET="your_client_secret"
+# Spotify (Deprecated)
+SPOTIFY_BASIC_AUTHENTICATION="your_basic_authentication"
 
 # Google Gemini
 GOOGLE_API_KEY="your_api_key"
-MODEL="gemini-2.0-flash-exp"
+MODEL="gemini-2.5-flash-lite-preview-09-2025"
 
 # Monitoring
 LOGFIRE=false
@@ -730,16 +728,18 @@ app.add_middleware(
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 - **FastAPI Docs**: https://fastapi.tiangolo.com/
 - **Pydantic AI**: https://ai.pydantic.dev/
 - **scikit-learn KNN**: https://scikit-learn.org/stable/modules/neighbors.html
 - **Spotify Web API**: https://developer.spotify.com/documentation/web-api/
+- **Deezer API**: https://developers.deezer.com/api
+- **Spotify Dataset**: https://www.kaggle.com/datasets/mrmorales/spotify-dataset
 - **Google Gemini**: https://ai.google.dev/
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source and available under the MIT License.

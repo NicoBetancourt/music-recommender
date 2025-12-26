@@ -2,50 +2,50 @@
 
 A modern and elegant user interface for the intelligent music recommendation system. Built with React, TypeScript, and Vite, it offers a premium experience with both traditional search and AI-powered magic search.
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [Core Features](#-core-features)
-- [Tech Stack](#-tech-stack)
-- [Installation and Configuration](#-installation-and-configuration)
-- [Running the Project](#-running-the-project)
-- [Component Architecture](#-component-architecture)
-- [Main Functionalities](#-main-functionalities)
-- [State Management](#-state-management)
-- [Backend Integration](#-backend-integration)
-- [Design and Styles](#-design-and-styles)
+- [Core Features](#core-features)
+- [Tech Stack](#tech-stack)
+- [Installation and Configuration](#installation-and-configuration)
+- [Running the Project](#running-the-project)
+- [Component Architecture](#component-architecture)
+- [Main Functionalities](#main-functionalities)
+- [State Management](#state-management)
+- [Backend Integration](#backend-integration)
+- [Design and Styles](#design-and-styles)
 
 ---
 
-## ✨ Core Features
+## Core Features
 
-- **🔍 Dual Search**:
+- **Dual Search**:
   - **Traditional Search**: Search songs by name or artist.
   - **Magic Search ✨**: Describe the type of music you're looking for in natural language, and AI will find the perfect songs.
 
-- **🎵 Integrated Audio Player**: 
-  - Plays 30-second previews from Spotify.
+- **Integrated Audio Player**: 
+  - Plays 30-second previews from Deezer.
   - Play/Pause controls.
   - Visual playback indicator.
 
-- **💫 Personalized Recommendations**:
+- **Personalized Recommendations**:
   - Select multiple favorite songs.
   - Get recommendations based on musical similarity.
   - ML algorithm that analyzes 10+ audio features.
 
-- **🎨 Premium Design**:
+- **Premium Design**:
   - Automatic Dark/Light mode.
   - Smooth animations and micro-interactions.
   - Responsive design (mobile-first).
-  - Glassmorphism and modern gradients.
+  - Modern gradients.
 
-- **⚡ Optimized Performance**:
+- **Optimized Performance**:
   - Lazy loading for songs.
   - Efficient state management with Zustand.
   - Hot Module Replacement (HMR) during development.
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Core
 - **React 19.2**: UI library with the latest features.
@@ -73,7 +73,7 @@ A modern and elegant user interface for the intelligent music recommendation sys
 
 ---
 
-## 📦 Installation and Configuration
+## Installation and Configuration
 
 ### Prerequisites
 
@@ -121,7 +121,7 @@ By default, the application points to `http://localhost:8000/api/v1`.
 
 ---
 
-## ▶️ Running the Project
+##  Running the Project
 
 ### Development Mode
 
@@ -165,7 +165,7 @@ npm run lint
 
 ---
 
-## 🏗 Component Architecture
+## Component Architecture
 
 ```
 src/
@@ -213,7 +213,7 @@ User interacts with UI
 
 ---
 
-## 🎯 Main Functionalities
+## Main Functionalities
 
 ### 1. Header
 
@@ -309,7 +309,7 @@ User interacts with UI
 
 ---
 
-## 🗄️ State Management
+## State Management
 
 ### Zustand Store
 
@@ -381,11 +381,11 @@ songs = recommendations
 
 ---
 
-## 🌐 Backend Integration
+## Backend Integration
 
 ### API Client
 
-**File**: `src/api/musicApi.ts`
+**File**: `src/api/client.ts`
 
 **Axios Configuration**:
 
@@ -423,7 +423,7 @@ try {
 
 ---
 
-## 🎨 Design and Styles
+## Design and Styles
 
 ### Design System
 
@@ -502,66 +502,6 @@ Icons used:
 
 ---
 
-## 🚀 Optimizations
-
-### Performance
-
-1. **Code Splitting**: Vite automatically splits the code.
-2. **Tree Shaking**: Removes unused code in production.
-3. **Lazy Loading**: Songs loaded on demand.
-4. **Memoization**: Zustand prevents unnecessary re-renders.
-
-### SEO (Future)
-
-To improve SEO in production:
-- Add dynamic meta tags.
-- Implement SSR with Vite SSR or Next.js.
-- Generate sitemap.xml.
-- Optimize images (WebP, lazy loading).
-
----
-
-## 🔮 Future Improvements
-
-- [ ] **Playlists**: Create and save personalized playlists.
-- [ ] **History**: View recently played songs.
-- [ ] **Favorites**: Mark songs as favorites.
-- [ ] **Sharing**: Share recommendations on social networks.
-- [ ] **Visualizer**: Real-time audio visualizer.
-- [ ] **Offline Mode**: Service Worker for offline playback.
-- [ ] **Authentication**: Spotify login for full access.
-- [ ] **Audio Analysis**: Show charts for musical features.
-
----
-
-## 📚 Additional Resources
-
-- **React Docs**: https://react.dev/
-- **Vite Docs**: https://vitejs.dev/
-- **TailwindCSS**: https://tailwindcss.com/
-- **Zustand**: https://zustand-demo.pmnd.rs/
-- **TypeScript**: https://www.typescriptlang.org/
-
----
-
-## 🤝 Contribution
-
-To contribute to the project:
-
-1. Fork the repository.
-2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
-
----
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
-
----
-
-## 🎵 Enjoy the Music
+## Enjoy the Music
 
 Explore, discover, and enjoy personalized AI-powered music recommendations! 🎧✨

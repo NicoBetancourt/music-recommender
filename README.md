@@ -106,7 +106,7 @@ The frontend will be available at: **http://localhost:5173**
 
 ---
 
-## 📖 Detailed Documentation
+## Detailed Documentation
 
 ### Backend
 Refer to [`backend/README.md`](./backend/README.md) for:
@@ -357,35 +357,6 @@ bun run build
 
 ---
 
-## Contribution
-
-Contributions are welcome! Please:
-
-1. Fork the project.
-2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
-
----
-
-## 📝 Roadmap
-
-- [x] Basic ML recommendation system.
-- [x] LLM integration for natural search.
-- [x] Audio player with Spotify previews.
-- [x] Modern interface with dark mode.
-- [ ] Authentication system.
-- [ ] Personalized playlists.
-- [ ] Playback history.
-- [ ] User preference analysis.
-- [ ] Offline mode with Service Worker.
-- [ ] Real-time audio visualizer.
-- [ ] Social sharing functionality.
-- [ ] Collaborative filtering recommendations.
-
----
-
 ## Resources and References
 
 - **FastAPI**: https://fastapi.tiangolo.com/
@@ -400,18 +371,6 @@ Contributions are welcome! Please:
 
 ---
 
-## Author
-
-**Nico Betancourt**
-
----
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
 ## Acknowledgments
 
 - Spotify dataset provided by the Kaggle community.
@@ -421,4 +380,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
-## Enjoy Discovering New Music! 🎧✨
+## Author
+
+**Nico Betancourt**
