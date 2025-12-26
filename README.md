@@ -1,26 +1,26 @@
-# 🎵 Music Recommender
+# Music Recommender
 
 An intelligent music recommendation system that combines **Machine Learning** with **Generative Artificial Intelligence** to offer personalized recommendations based on musical features and natural language descriptions.
 
-## 🌟 Key Features
+## Key Features
 
-- **🤖 Dual Recommendations**:
+- ** Dual Recommendations**:
   - **Traditional ML**: Based on musical feature similarity (K-Nearest Neighbors).
   - **Generative AI**: Natural language description → Musical features → Recommendations.
 
-- **🎨 Premium Interface**: Modern design with dark mode, smooth animations, and micro-interactions.
+- ** Premium Interface**: Modern design with dark mode, smooth animations, and micro-interactions.
 
-- **🔍 Intelligent Search**: 
+- ** Intelligent Search**: 
   - Traditional search by name/artist.
   - Magic search utilizing natural language processing.
 
-- **🎧 Integrated Player**: Spotify audio previews directly within the application.
+- ** Integrated Player**: Spotify audio previews directly within the application.
 
-- **📊 30,000+ Songs**: Comprehensive Spotify dataset with detailed audio features.
+- ** 30,000+ Songs**: Comprehensive Spotify dataset with detailed audio features available [here](https://www.kaggle.com/datasets/bricevergnou/spotify-recommendation).
 
 ---
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 ```
 music-recommender/
@@ -43,7 +43,7 @@ music-recommender/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -51,7 +51,7 @@ music-recommender/
   - Python 3.13+
   - uv (package manager)
   - Google Gemini API Key
-  - Spotify API Credentials (optional, for previews)
+  - Deezer API Credentials (optional, for previews)
 
 - **Frontend**:
   - Node.js 18+ or Bun 1.0+
@@ -127,7 +127,7 @@ Refer to [`frontend/README.md`](./frontend/README.md) for:
 
 ---
 
-## 🎯 Use Cases
+## Use Cases
 
 ### 1. Recommendation by Similar Songs
 
@@ -164,29 +164,29 @@ Refer to [`frontend/README.md`](./frontend/README.md) for:
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 ### Hybrid Recommendation System
 
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                      USER                               │
-└────────────┬────────────────────────────┬───────────────┘
-             │                            │
-             │                            │
+└────────────┬───────────────────────────┬─-──────────────┘
+             │                           │
+             │                           │
     ┌────────▼────────┐          ┌───────▼────────┐
     │  Select         │          │  Describe in   │
     │  Songs          │          │  Natural Text  │
     └────────┬────────┘          └───────┬────────┘
-             │                            │
-             │                            │
+             │                           │
+             │                           │
     ┌────────▼────────┐          ┌───────▼────────┐
     │  Extract        │          │  LLM (Gemini)  │
     │  Musical        │          │  Extract       │
     │  Features       │          │  Features      │
     └────────┬────────┘          └───────┬────────┘
-             │                            │
-             └────────────┬───────────────┘
+             │                           │
+             └────────────┬──────────────┘
                           │
                  ┌────────▼────────┐
                  │  Numerical      │
@@ -225,7 +225,7 @@ The system analyzes **10 attributes** for each song:
 
 ---
 
-## 🛠️ Full Tech Stack
+## Full Tech Stack
 
 ### Backend
 - **Framework**: FastAPI (Python 3.13)
@@ -250,7 +250,7 @@ The system analyzes **10 attributes** for each song:
 
 ---
 
-## 📊 LLM Usage Examples
+## LLM Usage Examples
 
 ### User Input → Extracted Features
 
@@ -264,23 +264,30 @@ The system analyzes **10 attributes** for each song:
 
 ---
 
-## 🎨 Screenshots
+## Screenshots
 
 ### Normal Search
-![Normal Search](docs/screenshots/normal-search.png)
+<img width="2558" height="1434" alt="image" src="https://github.com/user-attachments/assets/6ea4ef46-5a9c-4fdb-882d-db6e87e3b325" />
 
-### Magic Search ✨
-![Magic Search](docs/screenshots/magic-search.png)
-
-### Recommendations
-![Recommendations](docs/screenshots/recommendations.png)
-
-### Player
-![Player](docs/screenshots/player.png)
+### Magic Search
+<img width="2558" height="1434" alt="image" src="https://github.com/user-attachments/assets/b27e55e6-b1a0-4fde-a7be-5ada4ac52172" />
 
 ---
 
-## 🔐 Environment Variables
+<img width="2558" height="1434" alt="image" src="https://github.com/user-attachments/assets/ad7a2953-d732-432d-88ac-0fa2b051653e" />
+
+
+### Recommendations
+<img width="2558" height="1434" alt="image" src="https://github.com/user-attachments/assets/7f631974-2da1-4ea9-ae95-b60a49e3f2b4" />
+
+
+### Player
+<img width="2628" height="768" alt="image" src="https://github.com/user-attachments/assets/0091eff8-5c06-4d1c-8edc-ead8bbf5fddb" />
+
+
+---
+
+## Environment Variables
 
 ### Backend (`.env`)
 
@@ -292,13 +299,12 @@ API_V1_STR="/api/v1"
 # Database
 DATABASE_URL="sqlite+aiosqlite:///./music_recommender.db"
 
-# Spotify API
-SPOTIFY_CLIENT_ID="your_client_id"
-SPOTIFY_CLIENT_SECRET="your_client_secret"
+# Spotify API (deprecated)
+SPOTIFY_BASIC_AUTHENTICATION="your_spotify_basic_auth"
 
 # Google Gemini
 GOOGLE_API_KEY="your_api_key"
-MODEL="gemini-2.0-flash-exp"
+MODEL="gemini-2.5-flash"
 
 # Monitoring (optional)
 LOGFIRE=false
@@ -312,7 +318,7 @@ VITE_API_URL=http://localhost:8000/api/v1
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Backend
 
@@ -331,7 +337,7 @@ bun test
 
 ---
 
-## 🚢 Deployment
+## Deployment
 
 ### Backend (Docker)
 
@@ -351,7 +357,7 @@ bun run build
 
 ---
 
-## 🤝 Contribution
+## Contribution
 
 Contributions are welcome! Please:
 
@@ -380,7 +386,7 @@ Contributions are welcome! Please:
 
 ---
 
-## 📚 Resources and References
+## Resources and References
 
 - **FastAPI**: https://fastapi.tiangolo.com/
 - **Pydantic AI**: https://ai.pydantic.dev/
@@ -389,29 +395,30 @@ Contributions are welcome! Please:
 - **Vite**: https://vitejs.dev/
 - **TailwindCSS**: https://tailwindcss.com/
 - **Spotify Web API**: https://developer.spotify.com/documentation/web-api/
+- **Deezer Web API**: https://developers.deezer.com/api/
 - **Google Gemini**: https://ai.google.dev/
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-**Juan Betancourt**
+**Nico Betancourt**
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Spotify dataset provided by the Kaggle community.
 - Google for Gemini API access.
-- Spotify for their music API.
+- Spotify and Deezer for their music API.
 - The open-source community for incredible tools.
 
 ---
 
-## 🎵 Enjoy Discovering New Music! 🎧✨
+## Enjoy Discovering New Music! 🎧✨
